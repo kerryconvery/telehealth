@@ -1,7 +1,6 @@
 import CreateNewClientRequest from '../dto/createNewClientRequest';
-import getClientsResponse from '../dto/getClientsResponse';
+import ClientResponse from '../dto/clientResponse';
 import Client from '../domain-models/client';
-import GetClientsResponse from '../dto/getClientsResponse';
 
 export default class ClientMapper {
   static fromCreateNewClientRequest(createNewClient: CreateNewClientRequest): Client {
@@ -15,8 +14,8 @@ export default class ClientMapper {
     return client;
   }
 
-  static toGetAllClientsResponse(client: Client): getClientsResponse {
-    const getClientsResponse = new GetClientsResponse();
+  static toClientsResponse(client: Client): ClientResponse {
+    const getClientsResponse = new ClientResponse();
 
     getClientsResponse.id = client.id;
     getClientsResponse.title = client.title;

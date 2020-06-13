@@ -1,11 +1,11 @@
 import { check, validationResult } from 'express-validator/check';
 import { Router, Request, Response } from 'express';
 import IController from './controller';
-import IClientService from '../domain/services/clientService';
-import ClientMapper from './mappers/clientMapper';
+import { IClientService } from '../../domain/services/client-service/clientService';
+import ClientMapper from '../mappers/clientMapper';
 
 const clientValidationRules = [
-  check('title', 'First name is required').isString(),  
+  check('title', 'Title is required').isString(),  
   check('firstName', 'First name is required').isString(),
   check('lastName', 'Last name is required').isString(),
   check('phoneNumber', 'Phone number is required').isString(),
@@ -26,15 +26,15 @@ export default class ClientController implements IController {
 
   public async addClient(request: Request, response: Response) {
     const errors = validationResult(request);
-    console.log('errors', errors);
+
     if (!errors.isEmpty()) {
       return response.status(400).json({ errors: errors.array() });
     }
 
     const createNewClientRequest = ClientMapper.toCreateNewClientRequest(request.body);
-    const clientDto = await this.clientService.createNewClient(createNewClientRequest);
+    await this.clientService.createNewClient(createNewClientRequest);
     
-    response.status(200).send(clientDto);
+    response.status(201).send();
   }
 
   public async getClients(request: Request, response: Response) {

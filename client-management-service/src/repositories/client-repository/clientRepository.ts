@@ -23,14 +23,10 @@ export default class ClientRepository implements IClientRepository {
 
     // await this.postgresDatabase.query(query, values);
 
-    console.log('id', id);
-
     this.clientStore.push({
       ...client,
       id,
     });
-
-    console.log(this.clientStore[0]);
   }
 
   async getAllClients(): Promise<Client[]> {

@@ -1,8 +1,12 @@
 import IClientRepository from '../../repositories/clientRepository';
 import CreateNewClientRequest from '../../dto/createNewClientRequest';
-import GetClientsResponse from '../../dto/getClientsResponse';
-import IClientService from '../clientService';
+import ClientResponse from '../../dto/ClientResponse';
 import ClientMapper from '../../mappers/clientMapper';
+
+export interface IClientService {
+  createNewClient(newClient: CreateNewClientRequest): Promise<void>;
+  getClients(): Promise<ClientResponse[]>;
+}
 
 export default class ClientService implements IClientService{
 
@@ -18,9 +22,9 @@ export default class ClientService implements IClientService{
     await this.clientRepository.insertClient(client);
   }
 
-  async getClients(): Promise<GetClientsResponse[]> {
+  async getClients(): Promise<ClientResponse[]> {
     const clients = await this.clientRepository.getAllClients();
 
-    return clients.map(ClientMapper.toGetAllClientsResponse);
+    return clients.map(ClientMapper.toClientsResponse);
   }
 }

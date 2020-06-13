@@ -1,0 +1,21 @@
+{
+  "name": "integration-tests",
+  "version": "1.0.0",
+  "description": "Telehealth integration tests",
+  "main": "index.js",
+  "author": "kerry convery",
+  "license": "ISC",
+  "scripts": {
+    "test:integration": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "jest": "26.0.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.js?$"
+  }
+}

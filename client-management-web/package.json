@@ -1,5 +1,5 @@
 {
-  "name": "telehealth-web-client",
+  "name": "client-management-web",
   "version": "1.0.0",
   "description": "Telehealth web client",
   "main": "index.js",

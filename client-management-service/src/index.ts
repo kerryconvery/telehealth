@@ -1,4 +1,5 @@
 import express, { Router } from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import winston from "winston";
 import EnvConfigurationOptions from './configurationOptions/envConfigurationOptions';
@@ -19,6 +20,7 @@ const controllers = configureControllers(configurationOptions);
 
 controllers.forEach(controller => controller.addRoutes(router));
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(router);
 

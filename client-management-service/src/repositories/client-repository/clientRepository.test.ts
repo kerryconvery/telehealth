@@ -12,7 +12,7 @@ describe('When inserting a client', () => {
     postgresDatabaseMock.nextId.mockClear();
   });
 
-  it('should assigned a new id', async () => {
+  it('should create a new id', async () => {
     const mockClient = {
       title: 'Mr',
       firstName: 'User',
@@ -26,8 +26,8 @@ describe('When inserting a client', () => {
 
     await clientRepository.insertClient(mockClient);
 
-    expect(postgresDatabaseMock.query).toHaveBeenCalledWith(
-      expect.any(String),
-      ['1', 'Mr', 'User', 'One', '1234'])
+    const clients = await clientRepository.getAllClients();
+
+    expect(clients[0].id).toEqual('1');
   });
 });

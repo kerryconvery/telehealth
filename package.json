@@ -41,7 +41,7 @@
     ],
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "web-client/src/**/*.js",
+      "client/src/**/*.js",
       "web-client/src/**/*.jsx",
       "!**/templates/**/*.*",
       "!**/index.js",
@@ -52,5 +52,8 @@
       "!web-service/webpack.config.js",
       "!web-service/**/integration-tests.js"
     ]
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
   }
 }
