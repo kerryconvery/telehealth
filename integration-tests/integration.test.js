@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from '../config.json';
 
-const baseUrl = config.env.sit;
+const baseUrl = config.env[process.env.APP_ENV];
 
 describe('When posting a client', () => {
   it('should validate the request and return http status code 200 for valid requests', async () => {

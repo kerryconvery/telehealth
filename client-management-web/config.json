@@ -1,7 +1,5 @@
 {
   "env": {
-    "dev": "http://localhost:5001/api",
-    "sit": "http://localhost:5001/api",
-    "prod": "http://localhost:5001/api"
+    "local": "http://localhost:3000"
   }
 }

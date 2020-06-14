@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const ROOT_DIR = path.resolve(__dirname, './');
-const DIST_DIR = path.resolve(ROOT_DIR, 'public');
+const DIST_DIR = path.resolve(ROOT_DIR, 'dist');
 
 module.exports = {
   entry: [
@@ -33,14 +33,21 @@ module.exports = {
   output: {
     path: DIST_DIR,
     filename: 'index.js',
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
-    new CleanWebpackPlugin(['public'], { root: ROOT_DIR }),
-    new CopyWebpackPlugin(['src/index.html', 'public/**/*']),
+    new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'index.html', to: '.' }
+      ],
+    }),
     new webpack.DefinePlugin({
-      'process.env': {
-        APP_ENV: process.env.APP_ENV,
-      },
+      'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
     }),
   ],
+  mode: 'production',
 };
