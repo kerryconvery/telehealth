@@ -1,7 +1,8 @@
 import React from 'react';
+import ClientRegistrationForm from './client-registration-form/clientRegistrationForm';
 
 const ClientRegistrationPage = () => (
-  <div>Client registration page</div>
+  <ClientRegistrationForm />
 )
 
 export default ClientRegistrationPage;
