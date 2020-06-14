@@ -20,8 +20,11 @@ Telehealth code challenge
 
 ### Improvements
 #### Application improvements
-* For security, require the user to login before they can view and update client information
-* Generate a user friendly client number which is displayed on the frontend
+* For security, secure the backend with OAuth and require the user to login before they can view client information
+* Connect it to a real database
+* Store client information encrypted at rest
+* Use SSL between frontend and backend
+* Generate a user friendly client or patient number which is displayed on the frontend
 * Capture additional information about the client/patient such as:
   - Middle name
   - Email address
@@ -33,8 +36,9 @@ Telehealth code challenge
   - Date they joined
   - Notes
   - Auditing information
+* Support search by name, client/patient number, email address, phone number 
+* Improve the user experience with input masks (for phone number, email address, etc) and improved validation
 * Ability to edit and delete an existing client/patient record
-* Connect it to a real database
 * Frontend error handling
 
 #### Technical improvements
