@@ -11,10 +11,10 @@ import Grid from '@material-ui/core/Grid';
 
 const ClientListSkeleton = () => (
   <Grid container spacing={3}>
-    <Grid item xs={4}><Skeleton variant='text' animation={false} /></Grid>
-    <Grid item xs={4}><Skeleton variant='text' animation={false} /></Grid>
-    <Grid item xs={4}><Skeleton variant='text' animation={false} /></Grid>
-    <Grid item xs={4}><Skeleton variant='text' animation={false} /></Grid>
+    <Grid item xs={3}><Skeleton variant='text' animation={false} /></Grid>
+    <Grid item xs={3}><Skeleton variant='text' animation={false} /></Grid>
+    <Grid item xs={3}><Skeleton variant='text' animation={false} /></Grid>
+    <Grid item xs={3}><Skeleton variant='text' animation={false} /></Grid>
     <Grid item xs={12}>
       <Skeleton variant='text' animation={false} />
       <Skeleton variant='text' animation={false} />

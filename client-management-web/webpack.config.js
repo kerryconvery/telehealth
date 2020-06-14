@@ -49,5 +49,5 @@ module.exports = {
       'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV),
     }),
   ],
-  mode: 'production',
+  mode: 'development',
 };

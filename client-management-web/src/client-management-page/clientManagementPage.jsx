@@ -9,9 +9,7 @@ const ClientManagementPage = ({ getClients }) => {
   const [ clients, setClients ] = useState();
   const navigate = useNavigation();
 
-  useEffect(() => getClients().then(setClients), []);
-
-  console.log('clients', clients);
+  useEffect(() => { getClients().then(setClients) }, []);
   
   return (
     <StandardPageTemplate

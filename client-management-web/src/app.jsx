@@ -10,7 +10,7 @@ const App = ({ api }) => (
   <ApplicationTemplate>
     <Router>
       <ClientManagementPage path={routes.clientManagement} getClients={api.getClientsRequest} />
-      <ClientRegistrationPage path={routes.clientRegistration} />
+      <ClientRegistrationPage path={routes.clientRegistration} registerClient={api.registerClientRequest} />
     </Router>
   </ApplicationTemplate>
 )

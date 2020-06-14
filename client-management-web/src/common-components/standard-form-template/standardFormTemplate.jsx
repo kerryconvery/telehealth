@@ -20,7 +20,7 @@ const StandardFormTemplate = ({ title, children, actions }) => (
 StandardFormTemplate.propTypes = {
   title: string.isRequired,
   children: node.isRequired,
-  actions: array.isRequired,
+  actions: node.isRequired,
 }
 
 export default StandardFormTemplate;
