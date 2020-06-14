@@ -1,5 +1,5 @@
 # telehealth
-Telehealth code challenge
+Telehealth code challenge.  This application consisted of a NodeJS backend writted in typescript and a React frontend written in pure JS.  In order to run the application you'll need to start both the backend and frontend.  See the steps to run below.
 
 ### Requirements to run
 * Lerna v3.22+ `npm install --global lerna`
@@ -14,9 +14,11 @@ Telehealth code challenge
 * `lerna run test:integration --stream` - run the integration tests (web server must be running first)
 
 ### How to run the application
-1. Install all dependencies `lerna bootstrap`
-2. Start the web service and web server `lerna run start`
-3. Navigate your browser to http://localhost:8080
+1. Clone to repository to your local machine
+2. Change the to folder into which the repository was cloned.
+3. Install all dependencies `lerna bootstrap`
+4. Start the web service and web server `lerna run start`
+5. Navigate your browser to http://localhost:8080
 
 ### Improvements
 #### Application improvements
