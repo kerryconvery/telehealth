@@ -24,6 +24,11 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(router);
 
+app.use((err: any, req: any, res: any) => {
+  logger.error('An internal server error occurred', err.stack);
+  res.status(500).send("Internal server error");
+});
+
 app.listen(configurationOptions.getListenPort(), () => {
   logger.info(`server started at http://localhost:${ configurationOptions.getListenPort() }`);
 });
