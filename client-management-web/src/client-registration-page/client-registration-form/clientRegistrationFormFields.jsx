@@ -55,6 +55,7 @@ const ClientRegistrationFormFields = ({ client, validationErrors, onChange }) =>
           label="Title"
           id="title"
           select
+          defaultValue=""
           error={!_.isEmpty(validationErrors.title)}
           helperText={validationErrors.title || "Required"}
           onChange={onInputChange('title')}

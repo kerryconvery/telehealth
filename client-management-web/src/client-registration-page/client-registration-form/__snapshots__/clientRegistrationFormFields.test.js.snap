@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When there are validation errros should display the errors against their respective controls 1`] = `
+<WithStyles(ForwardRef(FormControl))
+  component="fieldset"
+>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-shortFormControl-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      defaultValue=""
+      error={true}
+      helperText="Please choose a title"
+      id="title"
+      label="Title"
+      onChange={[Function]}
+      select={true}
+    >
+      <WithStyles(ForwardRef(MenuItem))
+        value="Mr"
+      >
+        Mr
+      </WithStyles(ForwardRef(MenuItem))>
+      <WithStyles(ForwardRef(MenuItem))
+        value="Mrs"
+      >
+        Mrs
+      </WithStyles(ForwardRef(MenuItem))>
+      <WithStyles(ForwardRef(MenuItem))
+        value="Miss"
+      >
+        Miss
+      </WithStyles(ForwardRef(MenuItem))>
+      <WithStyles(ForwardRef(MenuItem))
+        value="Ms"
+      >
+        Ms
+      </WithStyles(ForwardRef(MenuItem))>
+    </WithStyles(ForwardRef(TextField))>
+  </WithStyles(ForwardRef(FormControl))>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-longFormControl-2"
+  >
+    <WithStyles(ForwardRef(TextField))
+      error={true}
+      helperText="Please enter a first name"
+      id="first-name"
+      label="First name"
+      onChange={[Function]}
+    />
+  </WithStyles(ForwardRef(FormControl))>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-longFormControl-2"
+  >
+    <WithStyles(ForwardRef(TextField))
+      error={true}
+      helperText="Please enter a last name"
+      id="last-name"
+      label="Last name"
+      onChange={[Function]}
+    />
+  </WithStyles(ForwardRef(FormControl))>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-shortFormControl-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      error={true}
+      helperText="Please enter a phone number"
+      id="phone-number"
+      label="Phone number"
+      onChange={[Function]}
+    />
+  </WithStyles(ForwardRef(FormControl))>
+</WithStyles(ForwardRef(FormControl))>
+`;
+
+exports[`When there are validation errros should not display errors when there are not validation errors 1`] = `
+<WithStyles(ForwardRef(FormControl))
+  component="fieldset"
+>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-shortFormControl-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      defaultValue=""
+      error={false}
+      helperText="Required"
+      id="title"
+      label="Title"
+      onChange={[Function]}
+      select={true}
+    >
+      <WithStyles(ForwardRef(MenuItem))
+        value="Mr"
+      >
+        Mr
+      </WithStyles(ForwardRef(MenuItem))>
+      <WithStyles(ForwardRef(MenuItem))
+        value="Mrs"
+      >
+        Mrs
+      </WithStyles(ForwardRef(MenuItem))>
+      <WithStyles(ForwardRef(MenuItem))
+        value="Miss"
+      >
+        Miss
+      </WithStyles(ForwardRef(MenuItem))>
+      <WithStyles(ForwardRef(MenuItem))
+        value="Ms"
+      >
+        Ms
+      </WithStyles(ForwardRef(MenuItem))>
+    </WithStyles(ForwardRef(TextField))>
+  </WithStyles(ForwardRef(FormControl))>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-longFormControl-2"
+  >
+    <WithStyles(ForwardRef(TextField))
+      error={false}
+      helperText="Required"
+      id="first-name"
+      label="First name"
+      onChange={[Function]}
+    />
+  </WithStyles(ForwardRef(FormControl))>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-longFormControl-2"
+  >
+    <WithStyles(ForwardRef(TextField))
+      error={false}
+      helperText="Required"
+      id="last-name"
+      label="Last name"
+      onChange={[Function]}
+    />
+  </WithStyles(ForwardRef(FormControl))>
+  <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-shortFormControl-1"
+  >
+    <WithStyles(ForwardRef(TextField))
+      error={false}
+      helperText="Required"
+      id="phone-number"
+      label="Phone number"
+      onChange={[Function]}
+    />
+  </WithStyles(ForwardRef(FormControl))>
+</WithStyles(ForwardRef(FormControl))>
+`;
