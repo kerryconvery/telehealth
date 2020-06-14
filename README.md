@@ -46,4 +46,6 @@ Telehealth code challenge.  This application consisted of a NodeJS backend writt
 #### Technical improvements
 * Setup a CICD build pipeline and have it hosted on the a cloud platform
 * Store secrets in a secure location such as AWS Parameter store or secrets manager
+* Service monitoring
+* Error logging frontend and backend
 * Use a linter
