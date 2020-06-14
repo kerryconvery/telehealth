@@ -49,3 +49,4 @@ Telehealth code challenge.  This application consisted of a NodeJS backend writt
 * Service monitoring
 * Error logging frontend and backend
 * Use a linter
+* E2E UI Tests
