@@ -1,4 +1,4 @@
-import IClientRepository from '../../domain/repositories/clientRepository';
+import IClientRepository from '../../domain/outputPorts/clientRepository';
 import Client from '../../domain/domain-models/client';
 import IPostgresDatabase from '../postgresDatabase'
 // import ClientMapper from '../mappers/clientMapper';

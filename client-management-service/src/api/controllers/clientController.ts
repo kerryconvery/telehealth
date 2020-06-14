@@ -1,7 +1,8 @@
-import { check, validationResult } from 'express-validator/check';
+import { check } from 'express-validator/check';
+import validator from '../../middleware/requestValidation';
 import { Router, Request, Response } from 'express';
 import IController from './controller';
-import { IClientService } from '../../domain/services/client-service/clientService';
+import IClientService from '../../domain/inputPorts/clientService';
 import ClientMapper from '../mappers/clientMapper';
 
 const clientValidationRules = [
@@ -20,17 +21,11 @@ export default class ClientController implements IController {
   }
 
   addRoutes(router: Router) {
-    router.post(this.basePath, clientValidationRules, this.addClient.bind(this));
+    router.post(this.basePath, clientValidationRules, validator, this.addClient.bind(this));
     router.get(this.basePath, this.getClients.bind(this));
   }
 
   public async addClient(request: Request, response: Response) {
-    const errors = validationResult(request);
-
-    if (!errors.isEmpty()) {
-      return response.status(400).json({ errors: errors.array() });
-    }
-
     const createNewClientRequest = ClientMapper.toCreateNewClientRequest(request.body);
     await this.clientService.createNewClient(createNewClientRequest);
     

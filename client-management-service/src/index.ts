@@ -1,4 +1,4 @@
-import express, { Router } from 'express';
+import express, { Router, Request, Response } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import winston from "winston";
@@ -24,7 +24,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(router);
 
-app.use((err: any, req: any, res: any) => {
+app.use((err: Error, req: Request, res: Response) => {
   logger.error('An internal server error occurred', err.stack);
   res.status(500).send("Internal server error");
 });

@@ -1,12 +1,8 @@
-import IClientRepository from '../../repositories/clientRepository';
+import IClientRepository from '../../outputPorts/clientRepository';
+import IClientService from '../../inputPorts/clientService';
 import CreateNewClientRequest from '../../dto/createNewClientRequest';
 import ClientResponse from '../../dto/ClientResponse';
 import ClientMapper from '../../mappers/clientMapper';
-
-export interface IClientService {
-  createNewClient(newClient: CreateNewClientRequest): Promise<void>;
-  getClients(): Promise<ClientResponse[]>;
-}
 
 export default class ClientService implements IClientService{
 
