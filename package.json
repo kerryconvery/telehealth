@@ -5,9 +5,6 @@
   "main": "index.js",
   "author": "kerry convery",
   "license": "ISC",
-  "scripts": {
-    "start": "docker-compose up"
-  },
   "devDependencies": {
     "@babel/core": "7.10.2",
     "@babel/plugin-proposal-class-properties": "7.10.1",
