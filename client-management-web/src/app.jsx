@@ -16,7 +16,7 @@ const App = ({ api }) => (
 )
 
 App.propTypes = {
-  api: object
+  api: object.isRequired,
 }
 
 export default App;

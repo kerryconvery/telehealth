@@ -1,21 +1,9 @@
 import React from 'react';
 import { shape, string, func } from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import _ from 'lodash';
-
-const useStyles = makeStyles((theme) => ({
-  shortFormControl: {
-    margin: theme.spacing(3),
-    minWidth: 120,
-  },
-  longFormControl: {
-    margin: theme.spacing(3),
-    minWidth: 120,
-  },
-}));
 
 const validateFields = (client) => {
   const validationErrors = {};
@@ -40,7 +28,6 @@ const validateFields = (client) => {
 }
 
 const ClientRegistrationFormFields = ({ client, validationErrors, onChange }) => {
-  const classes = useStyles();
 
   const onInputChange = fieldName => (event) => {
     const newClient = { ...client };
@@ -49,13 +36,14 @@ const ClientRegistrationFormFields = ({ client, validationErrors, onChange }) =>
   }
 
   return (
-    <FormControl component="fieldset">
-      <FormControl className={classes.shortFormControl}>
+    <FormControl component="fieldset" fullWidth>
+      <FormControl>
         <TextField
           label="Title"
           id="title"
           select
           defaultValue=""
+          size="small"
           error={!_.isEmpty(validationErrors.title)}
           helperText={validationErrors.title || "Required"}
           onChange={onInputChange('title')}
@@ -66,16 +54,17 @@ const ClientRegistrationFormFields = ({ client, validationErrors, onChange }) =>
           <MenuItem value='Ms'>Ms</MenuItem>
         </TextField>
       </FormControl>
-      <FormControl className={classes.longFormControl}>
+      <FormControl>
         <TextField
           id="first-name"
           label="First name"
+          fullWidth
           error={!_.isEmpty(validationErrors.firstName)}
           helperText={validationErrors.firstName || "Required"}
           onChange={onInputChange('firstName')}
         />
       </FormControl>
-      <FormControl className={classes.longFormControl}>
+      <FormControl>
         <TextField
           id="last-name"
           label="Last name"
@@ -84,7 +73,7 @@ const ClientRegistrationFormFields = ({ client, validationErrors, onChange }) =>
           onChange={onInputChange('lastName')}
         />
       </FormControl>
-      <FormControl className={classes.shortFormControl}>
+      <FormControl>
         <TextField
           id="phone-number"
           label="Phone number"
