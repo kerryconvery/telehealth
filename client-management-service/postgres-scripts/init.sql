@@ -1,7 +1,8 @@
 CREATE DATABASE telehealth;
+\c telehealth
 GRANT ALL PRIVILEGES ON DATABASE telehealth to postgres;
 
-CREATE SCHEMA telehealth AUTHORIZATION postgres;
+CREATE SCHEMA telehealth;
 
 GRANT ALL PRIVILEGES ON SCHEMA telehealth to postgres;
 

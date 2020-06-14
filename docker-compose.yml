@@ -1,11 +1,8 @@
 
 version: "3"
-networks:
-  webnet:
-   driver: bridge
 
 services:
-  postgres:
+  db:
     image: "postgres:12"
     container_name: "postgres"
     environment:
@@ -14,17 +11,28 @@ services:
       - ./client-management-service/postgres-scripts/init.sql:/docker-entrypoint-initdb.d/10-init.sql
     ports:
       - "5432:5432"
-  # app:
-  #   build: ./client-management-service/
-  #   environment:
-  #     - PGUSER=telehealth
-  #     - PGHOST=localhost
-  #     - PGDATABASE=telehealth
-  #     - PGPASSWORD=password
-  #     - PGPORT=5432
-  #     - PGSSL=false
-  #     - LISTEN_PORT=3000
-  #   ports:
-  #     - "3000:3000"
-  #   networks:
-  #     - webnet
+  web:
+    image: node:14
+    command: node index.js
+    working_dir: /home/app
+    volumes:
+      - ./client-management-service/dist:/home/app
+    environment:
+      - PGUSER=postgres
+      - PGHOST=db
+      - PGDATABASE=telehealth
+      - PGPORT=5432
+      - PGSSL=false
+      - LISTEN_PORT=3000
+    ports:
+      - "3000:3000"
+  app:
+    image: node:14
+    command: npm run start:web-client
+    working_dir: /home/app
+    volumes:
+      - ./client-management-web/dist:/home/app
+    environment:
+      - APP_ENV=local
+    ports:
+      - "8080:8080"
