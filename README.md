@@ -26,7 +26,7 @@ Telehealth code challenge.  This application consisted of a NodeJS backend writt
 * Connect it to a real database
 * Store client information encrypted at rest
 * Use SSL between frontend and backend
-* Generate a user friendly client or patient number which is displayed on the frontend
+* Generate a human friendly client/patient number which is displayed on the frontend
 * Capture additional information about the client/patient such as:
   - Middle name
   - Email address
