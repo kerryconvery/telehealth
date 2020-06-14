@@ -1,16 +1,19 @@
-import { v4 as uuid } from 'uuid';
 import IClientRepository from '../../domain/outputPorts/clientRepository';
 import Client from '../../domain/domain-models/client';
 
 export default class ClientRepository implements IClientRepository {
 
   private clientStore: Client[] = [];
-  
-  constructor() {
+  private generateId: () => string;
+
+  constructor(generateId: () => string) {
+    this.generateId = generateId;
   }
 
   async insertClient(client: Client): Promise<void> {
-    const id = uuid();
+    const id = this.generateId();
+
+    console.log('id', id);
 
     this.clientStore.push({
       ...client,

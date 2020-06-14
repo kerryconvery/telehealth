@@ -2,14 +2,10 @@ import ClientRepository from './clientRepository';
 
 describe('When inserting a client', () => {
 
-  const postgresDatabaseMock = {
-    query: jest.fn(),
-    nextId: jest.fn(),
-  }
+  const generateIdMock = jest.fn();
 
   beforeEach(() => {
-    postgresDatabaseMock.query.mockClear();
-    postgresDatabaseMock.nextId.mockClear();
+    generateIdMock.mockClear();
   });
 
   it('should create a new id', async () => {
@@ -20,9 +16,9 @@ describe('When inserting a client', () => {
       phoneNumber: '1234',
     }
 
-    postgresDatabaseMock.nextId.mockResolvedValueOnce('1');
+    generateIdMock.mockReturnValueOnce('1');
     
-    const clientRepository = new ClientRepository(postgresDatabaseMock);
+    const clientRepository = new ClientRepository(generateIdMock);
 
     await clientRepository.insertClient(mockClient);
 
