@@ -26,13 +26,20 @@ services:
       - LISTEN_PORT=3000
     ports:
       - "3000:3000"
-  app:
-    image: node:14
-    command: npm run start:web-client
-    working_dir: /home/app
+    depends_on:
+      - db
+
+  client:
+    image: nginx:alpine
+    command: nginx
     volumes:
-      - ./client-management-web/dist:/home/app
+      - ./client-management-web/dist:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
     environment:
       - APP_ENV=local
+    expose:
+      - 8080
     ports:
       - "8080:8080"
+    depends_on:
+      - web
