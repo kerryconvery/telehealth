@@ -30,6 +30,6 @@ export default class EnvConfigurationOptions implements IPostgresConfigurationOp
   }
 
   getListenPort(): number {
-    return 3000;
+    return +process.env.LISTEN_PORT;
   }
 }

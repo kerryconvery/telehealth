@@ -6,8 +6,8 @@
   "scripts": {
     "test:web-client": "jest test",
     "test-watch:web-client": "jest --watchAll test",
-    "build:web-client": "webpack",
-    "start:web-client": "cross-env APP_ENV=local webpack-dev-server",
+    "build:web-client": "cross-env APP_ENV=local webpack",
+    "start:web-client": "webpack-dev-server",
     "start": "npm run start:web-client",
     "build": "npm run build:web-client"
   },

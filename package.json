@@ -6,7 +6,8 @@
   "author": "kerry convery",
   "license": "ISC",
   "scripts": {
-    "start": "docker-compose up"
+    "start:docker": "docker-compose up",
+    "stop:docker": "docker-compose down"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
