@@ -5,7 +5,7 @@ import ApiProvider from './api/apiProvider';
 import createHttpClient from './api/httpClient';
 import config from '../config.json';
 
-const httpClient = createHttpClient(config.env[process.env.APP_ENV]);
+const httpClient = createHttpClient('http://localhost:3000');
 
 ReactDOM.render(
   <ApiProvider httpClient={httpClient} >
