@@ -7,7 +7,9 @@
   "license": "ISC",
   "scripts": {
     "start:docker": "docker-compose up",
-    "stop:docker": "docker-compose down"
+    "stop:docker": "docker-compose down",
+    "start:docker:db": "docker-compose up db",
+    "start:docker:web": "docker-compose up web"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
