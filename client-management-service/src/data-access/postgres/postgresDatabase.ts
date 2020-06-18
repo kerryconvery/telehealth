@@ -1,5 +1,4 @@
 import { Pool, QueryResult } from 'pg';
-import { v4 as uuid } from 'uuid';
 import IPostgresDatabase from '../../repositories/postgresDatabase';
 import IPostgresConfigurationOptions from './postgresConfigurationOptions';
 
@@ -20,9 +19,5 @@ export default class PostgresDatabase implements IPostgresDatabase {
 
   query(sql: string, values: string[]): Promise<QueryResult> {
     return this.pool.query(sql, values);
-  }
-
-  nextId(): Promise<string> {
-    return Promise.resolve(uuid());
   }
 }

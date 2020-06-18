@@ -1,5 +1,5 @@
-export default class GetClientsResponse {
-  id: string;
+export default class ClientsResponseDto {
+  clientId: string;
   title: string;
 	firstName: string;
 	lastName: string;

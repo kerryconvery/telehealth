@@ -1,7 +1,7 @@
 import IClientRepository from '../../domain/outputPorts/clientRepository';
-import Client from '../../domain/domain-models/client';
+import Client from '../../domain/entities/client-entity/client';
 import IPostgresDatabase from '../postgresDatabase'
-import ClientMapper from '../mappers/clientMapper';
+import ClientFactory from '../../domain/entities/client-entity/clientFactory';
 
 export default class ClientRepository implements IClientRepository {
 
@@ -11,21 +11,25 @@ export default class ClientRepository implements IClientRepository {
     this.postgresDatabase = postgresClient;
   }
 
-  async insertClient(client: Client): Promise<void> {
-    const id = await this.postgresDatabase.nextId();
-
+  async add(client: Client): Promise<void> {
     const query = 'INSERT INTO telehealth.clients(' + 
-      'id, title, first_name, last_name, phone_number) VALUES($1, $2, $3, $4, $5)';
-    const values = [id, client.title, client.firstName, client.lastName, client.phoneNumber];
+      'client_number, title, first_name, last_name, phone_number) VALUES($1, $2, $3, $4, $5)';
+    const values = [client.id, client.title, client.firstName, client.lastName, client.phoneNumber];
 
     await this.postgresDatabase.query(query, values);
   }
 
-  async getAllClients(): Promise<Client[]> {
+  async get(): Promise<Client[]> {
     const query = 'SELECT id, title, first_name, last_name, phone_number FROM telehealth.clients';
 
     const queryResults = await this.postgresDatabase.query(query, []);
 
-    return queryResults.rows.map(ClientMapper.toClient);
+    return queryResults.rows.map(row => ClientFactory.buildWithId(
+      row.id,
+      row.title,
+      row.first_name,
+      row.last_name,
+      row.phone_number
+    ));
   }
 }
