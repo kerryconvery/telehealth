@@ -1,6 +1,6 @@
 
 const toClient = client => (
-  { 
+  {
     title: client.title,
     firstName: client.firstName,
     lastName: client.lastName,

@@ -5,19 +5,19 @@ dotenv.config();
 export default class EnvConfigurationOptions {
 
   getHost(): string {
-    return process.env.PGHOST;
+    return process.env.PGHOST || 'localhost';
   }
 
   getPort(): number {
-    return +process.env.PGPORT;
+    return +process.env.PGPORT || 5432;
   }
 
   getDatabaseName(): string {
-    return process.env.PGDATABASE;
+    return process.env.PGDATABASE || 'telehealth';
   }
 
   getUsername(): string {
-    return process.env.PGUSER;
+    return process.env.PGUSER || 'postgres';
   }
 
   getPassword(): string {
@@ -29,6 +29,6 @@ export default class EnvConfigurationOptions {
   }
 
   getListenPort(): number {
-    return 3000;
+    return +process.env.LISTEN_PORT || 3000;
   }
 }

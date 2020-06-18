@@ -5,6 +5,12 @@
   "main": "index.js",
   "author": "kerry convery",
   "license": "ISC",
+  "scripts": {
+    "start:docker": "lerna run build && docker-compose up",
+    "stop:docker": "docker-compose down",
+    "start:docker:db": "docker-compose up db",
+    "start:docker:web": "docker-compose up web"
+  },
   "devDependencies": {
     "@babel/core": "7.10.2",
     "@babel/plugin-proposal-class-properties": "7.10.1",

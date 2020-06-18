@@ -1,0 +1,40 @@
+
+version: "3"
+
+services:
+  db:
+    image: "postgres:12"
+    container_name: "postgres"
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - ./client-management-service/postgres-scripts/init.sql:/docker-entrypoint-initdb.d/10-init.sql
+    ports:
+      - "5432:5432"
+  web:
+    image: node:14
+    command: node index.js
+    working_dir: /home/app
+    volumes:
+      - ./client-management-service/dist:/home/app
+    environment:
+      - PGUSER=postgres
+      - PGHOST=db
+      - PGDATABASE=telehealth
+      - PGPORT=5432
+      - PGSSL=false
+      - LISTEN_PORT=3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  app:
+    image: nginx:1.19.0
+    entrypoint: ["nginx", "-g", "daemon off;"]
+    volumes:
+      - ./client-management-web/dist:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:8080"
+    depends_on:
+      - web

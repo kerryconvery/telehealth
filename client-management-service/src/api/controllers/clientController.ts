@@ -27,13 +27,13 @@ export default class ClientController implements IController {
 
   public async addClient(request: Request, response: Response) {
     const createNewClientRequest = ClientMapper.toCreateNewClientRequest(request.body);
-    await this.clientService.createNewClient(createNewClientRequest);
+    await this.clientService.addClient(createNewClientRequest);
     
     response.status(201).send();
   }
 
   public async getClients(request: Request, response: Response) {
-    const clientDtos = await this.clientService.getClients();
+    const clientDtos = await this.clientService.getAllClients();
     
     response.status(200).send(clientDtos);
   }

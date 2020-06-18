@@ -1,5 +1,4 @@
-export default class Client {
-  id?: string;
+export default class AddClientRequestDto {
   title: string;
 	firstName: string;
 	lastName: string;

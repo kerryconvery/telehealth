@@ -1,6 +1,6 @@
-import Client from '../domain-models/client';
+import Client from '../entities/client-entity/client';
 
 export default interface IClientRepository {
-  insertClient(client: Client): Promise<void>;
-  getAllClients(): Promise<Client[]>;
+  add(client: Client): Promise<void>;
+  get(): Promise<Client[]>;
 }

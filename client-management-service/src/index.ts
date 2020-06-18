@@ -16,7 +16,7 @@ const router = Router();
 
 const configurationOptions = new EnvConfigurationOptions();
 
-const controllers = configureControllers();
+const controllers = configureControllers(configurationOptions);
 
 controllers.forEach(controller => controller.addRoutes(router));
 
