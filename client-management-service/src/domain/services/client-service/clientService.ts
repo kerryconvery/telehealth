@@ -1,7 +1,7 @@
 import IClientRepository from '../../outputPorts/clientRepository';
 import IClientService from '../../inputPorts/clientService';
-import AddClientRequestDto from '../../dto/addClientRequestDto';
-import ClientResponseDto from '../../dto/ClientResponseDto';
+import AddClientDto from '../../dto/addClientDto';
+import ClientDto from '../../dto/ClientDto';
 import ClientMapper from '../../mappers/clientMapper';
 import ClientFactory from '../../entities/client-entity/clientFactory';
 
@@ -13,7 +13,7 @@ export default class ClientService implements IClientService{
     this.clientRepository = clientRepository;
   }
 
-  async addClient(newClient: AddClientRequestDto): Promise<void> {
+  async addClient(newClient: AddClientDto): Promise<void> {
     const client = ClientFactory.build(
       newClient.title,
       newClient.firstName,
@@ -24,7 +24,7 @@ export default class ClientService implements IClientService{
     await this.clientRepository.add(client);
   }
 
-  async getAllClients(): Promise<ClientResponseDto[]> {
+  async getAllClients(): Promise<ClientDto[]> {
     const clients = await this.clientRepository.get();
 
     return clients.map(ClientMapper.toDto);

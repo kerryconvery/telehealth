@@ -1,4 +1,4 @@
-export default class ClientsResponseDto {
+export default class ClientDto {
   clientId: string;
   title: string;
 	firstName: string;

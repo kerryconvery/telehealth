@@ -1,10 +1,10 @@
-import ClientResponseDto from '../dto/clientResponseDto';
+import ClientDto from '../dto/clientDto';
 import Client from '../entities/client-entity/client';
 
 export default class ClientMapper {
 
-  static toDto(client: Client): ClientResponseDto {
-    const getClientsResponse = new ClientResponseDto();
+  static toDto(client: Client): ClientDto {
+    const getClientsResponse = new ClientDto();
 
     getClientsResponse.clientId = client.id;
     getClientsResponse.title = client.title;

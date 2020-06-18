@@ -1,7 +1,7 @@
-import AddClientRequestDto from '../dto/addClientRequestDto';
-import ClientResponseDto from '../dto/ClientResponseDto';
+import AddClientDto from '../dto/addClientDto';
+import ClientDto from '../dto/ClientDto';
 
 export default interface IClientService {
-  addClient(newClient: AddClientRequestDto): Promise<void>;
-  getAllClients(): Promise<ClientResponseDto[]>;
+  addClient(newClient: AddClientDto): Promise<void>;
+  getAllClients(): Promise<ClientDto[]>;
 }
