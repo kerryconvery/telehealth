@@ -2,6 +2,7 @@
 Telehealth code challenge.  This application consisted of a NodeJS backend writted in typescript and a React frontend written in pure JS.  In order to run the application you'll need to start both the backend and frontend.  See the steps to run below.
 
 ### Requirements to run
+* Docker v2
 * Lerna v3.22+ `npm install --global lerna`
 * NodeJs v14+
 * Npm 6.14+
