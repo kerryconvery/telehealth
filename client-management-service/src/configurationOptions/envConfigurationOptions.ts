@@ -1,9 +1,8 @@
 import dotenv from 'dotenv';
-import IPostgresConfigurationOptions from '../data-access/postgres/postgresConfigurationOptions';
 
 dotenv.config();
 
-export default class EnvConfigurationOptions implements IPostgresConfigurationOptions {
+export default class EnvConfigurationOptions {
 
   getHost(): string {
     return process.env.PGHOST || 'localhost';
