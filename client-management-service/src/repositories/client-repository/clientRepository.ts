@@ -13,7 +13,7 @@ export default class ClientRepository implements IClientRepository {
 
   async add(client: Client): Promise<void> {
     const query = 'INSERT INTO telehealth.clients(' + 
-      'client_number, title, first_name, last_name, phone_number) VALUES($1, $2, $3, $4, $5)';
+      'id, title, first_name, last_name, phone_number) VALUES($1, $2, $3, $4, $5)';
     const values = [client.id, client.title, client.firstName, client.lastName, client.phoneNumber];
 
     await this.postgresDatabase.query(query, values);
