@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test:wb-client",
     "test:web-client": "jest test",
     "test-watch:web-client": "jest --watchAll test",
     "build:web-client": "cross-env APP_ENV=local webpack",

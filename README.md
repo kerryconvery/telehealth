@@ -8,16 +8,17 @@ Telehealth code challenge.  This application consisted of a NodeJS backend writt
 
 ### Commands
 * `lerna bootstrap` - Install all dependencies
-* `lerna run start --stream` - Starts the web service and web client
-* `lerna run test:web-client --stream` - run the web client unit tests
-* `lerna run test:web-service --stream` - run the web service unit tests
-* `lerna run test:integration --stream` - run the integration tests (web server must be running first)
+* `lerna run build` - Build all components
+* `lerna run start:docker --stream` - Build and starts the application inside a docker container
+* `lerna run stop:docker --stream` - Stops the running application
+* `lerna run test --stream` - run all unit tests
+* `lerna run test:integration --stream` - run the integration tests (web service must be running first)
 
 ### How to run the application
 1. Clone to repository to your local machine
 2. Change the to folder into which the repository was cloned.
 3. Install all dependencies `lerna bootstrap`
-4. Start the web service and web server `lerna run start`
+4. Start the web service and web server `lerna run start:docker --stream`
 5. Navigate your browser to http://localhost:8080
 
 ### Improvements

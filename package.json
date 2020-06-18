@@ -6,7 +6,7 @@
   "author": "kerry convery",
   "license": "ISC",
   "scripts": {
-    "start:docker": "docker-compose up",
+    "start:docker": "lerna run build && docker-compose up",
     "stop:docker": "docker-compose down",
     "start:docker:db": "docker-compose up db",
     "start:docker:web": "docker-compose up web"

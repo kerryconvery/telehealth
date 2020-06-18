@@ -2,6 +2,7 @@
   "name": "client-management-service",
   "description": "Telehealth web service",
   "scripts": {
+    "test": "npm run test:web-service",
     "test:web-service": "jest",
     "lint:web-service": "eslint .",
     "build:web-service": "webpack",
