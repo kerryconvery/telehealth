@@ -3,10 +3,9 @@
 exports[`When there are validation errros should display the errors against their respective controls 1`] = `
 <WithStyles(ForwardRef(FormControl))
   component="fieldset"
+  fullWidth={true}
 >
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-shortFormControl-1"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       defaultValue=""
       error={true}
@@ -15,6 +14,7 @@ exports[`When there are validation errros should display the errors against thei
       label="Title"
       onChange={[Function]}
       select={true}
+      size="small"
     >
       <WithStyles(ForwardRef(MenuItem))
         value="Mr"
@@ -38,20 +38,17 @@ exports[`When there are validation errros should display the errors against thei
       </WithStyles(ForwardRef(MenuItem))>
     </WithStyles(ForwardRef(TextField))>
   </WithStyles(ForwardRef(FormControl))>
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-longFormControl-2"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       error={true}
+      fullWidth={true}
       helperText="Please enter a first name"
       id="first-name"
       label="First name"
       onChange={[Function]}
     />
   </WithStyles(ForwardRef(FormControl))>
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-longFormControl-2"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       error={true}
       helperText="Please enter a last name"
@@ -60,9 +57,7 @@ exports[`When there are validation errros should display the errors against thei
       onChange={[Function]}
     />
   </WithStyles(ForwardRef(FormControl))>
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-shortFormControl-1"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       error={true}
       helperText="Please enter a phone number"
@@ -77,10 +72,9 @@ exports[`When there are validation errros should display the errors against thei
 exports[`When there are validation errros should not display errors when there are not validation errors 1`] = `
 <WithStyles(ForwardRef(FormControl))
   component="fieldset"
+  fullWidth={true}
 >
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-shortFormControl-1"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       defaultValue=""
       error={false}
@@ -89,6 +83,7 @@ exports[`When there are validation errros should not display errors when there a
       label="Title"
       onChange={[Function]}
       select={true}
+      size="small"
     >
       <WithStyles(ForwardRef(MenuItem))
         value="Mr"
@@ -112,20 +107,17 @@ exports[`When there are validation errros should not display errors when there a
       </WithStyles(ForwardRef(MenuItem))>
     </WithStyles(ForwardRef(TextField))>
   </WithStyles(ForwardRef(FormControl))>
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-longFormControl-2"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       error={false}
+      fullWidth={true}
       helperText="Required"
       id="first-name"
       label="First name"
       onChange={[Function]}
     />
   </WithStyles(ForwardRef(FormControl))>
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-longFormControl-2"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       error={false}
       helperText="Required"
@@ -134,9 +126,7 @@ exports[`When there are validation errros should not display errors when there a
       onChange={[Function]}
     />
   </WithStyles(ForwardRef(FormControl))>
-  <WithStyles(ForwardRef(FormControl))
-    className="makeStyles-shortFormControl-1"
-  >
+  <WithStyles(ForwardRef(FormControl))>
     <WithStyles(ForwardRef(TextField))
       error={false}
       helperText="Required"
