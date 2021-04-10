@@ -8,10 +8,12 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      # install dependencies
+      - run:
+          name: Install initial dependencies
+          command: npm install
       - run:
           name: Install Dependencies
-          command: lerna bootstrape
+          command: lerna bootstrap
       - run:
           name: Run tests
           command: lerna run build
