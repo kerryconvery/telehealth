@@ -9,8 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install initial dependencies
-          command: npm install
+          name: Install lerna
+          command: npm install -g lerna
       - run:
           name: Install Dependencies
           command: lerna bootstrap
